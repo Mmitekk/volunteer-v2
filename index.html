@@ -1,12 +1,690 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Общество друзей Московского Епархиального Дома — Набор закрыт</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
-  <style>
+<html lang="en-US" class="light"><head>
+		<meta charset="utf-8">
+		<link rel="icon" type="image/png" sizes="512x512" href="https://z-cdn.chatglm.cn/z-ai/static/logo.svg">
+		<link rel="shortcut icon" href="https://z-cdn.chatglm.cn/z-ai/static/logo.svg">
+		<link rel="apple-touch-icon" sizes="512x512" href="https://z-cdn.chatglm.cn/z-ai/static/logo.svg">
+		<meta name="apple-mobile-web-app-title" content="Z.ai - Free AI Chatbot &amp; Agent powered by GLM-5.1 &amp; GLM-5">
+		
+		<meta name="keywords" content="GLM-4.6, GLM 4.6, GLM-4.6-Air, GLM 4.6 Air, GLM 4.5, GLM4.5, GLM4.6, Deep Research, z ai, z.ai, GLM 4.5 AI, GLM 4.6 AI, GLM AI, Chat Z, zai, Chat AI, GLM, z.ia, Chat Z AI, AI chat, chatbot, z.ai chat, free ai chat, free AI, free ai chat no login, GLM-4.5, GLM-4.5 chat, GLM-4.1V, GLM-4.5V, AI assistant chat, AI PPT, AI presentation, AI presentation maker, AI slides maker, AI slides, slide deck, pitch deck, AI deck generator, free pitch deck generator, AI PPT, AI PPT maker, AI for Google Slides, AI for PowerPoint, AI writer, AI writing assistant, AI code generator, full stack code generation, AI full stack developer, claude code, Roo Code, Cline, Kilo Code, OpenCode, Codex, Cursor, GLM Coding Plan, GLM Coding, AI Coding, code writer ai, magic design, magic design tool, AI inspiration board, visual brainstorming AI, chat with AI, AI对话, AI聊天, 聊天机器人, 免费AI聊天, AI做PPT, AI写作, AI编程, 全栈开发, 灵感画板, AI tool, AI helper, AI for students, AI for marketers, AI for content creation, ChatGPT, chatgpt free, Free ChatGPT, gpt chat, Gemini, Grok, Claude, Poe AI, YouChat, Jasper AI, deepseek, qwen, 豆包, 文心一言, AI搜问答, 写作灵感AI, 代码解释工具, PPT思路生成, 如何用AI做PPT, create pitch deck from brief, AI business plan presentation, marketing report slides, AI academic paper assistant, AI legal contract drafting, write social media calendar, AI email responder,  VS Code AI assistant, AI for Notion, AI for Figma, AI math problem solver from image, AI geoguessr solver, image to code generator, table extractor from image, chart data extractor, document analysis AI, image caption generator, visual Q&amp;A, 看图猜成语, AI拍照解题, 数学题解答, 物理题解答, GeoGuess AI, 图片转表格, 图片读数据, 看图问答, analyze video, summarize video content, generate video transcript, find object in image, what is in this picture, 视频分析, 视频内容摘要, 生成视频字幕, 图片里有什么, 识别图中物体, GLM-4.7, GLM 4.7, GLM4.7, skills, coding plan, GLM-5, GLM-5.0, GLM5, GLM 5, Pony, Pony Alpha">
+
+		<link rel="manifest" href="https://z-cdn.chatglm.cn/z-ai/frontend/static/manifest.json">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+		
+		<meta name="referrer" content="no-referrer">
+		<link rel="search" type="application/opensearchdescription+xml" title="Z.ai - Free AI Chatbot &amp; Agent powered by GLM-5 &amp; GLM-4.7" href="https://z-cdn.chatglm.cn/z-ai/frontend/static/opensearch.xml">
+		<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Z8QTHYBHP3"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag('js', new Date());
+
+			gtag('config', 'G-Z8QTHYBHP3');
+		</script>
+
+		<script>
+			let metrics = {};
+			const observer = new PerformanceObserver((list) => {
+				const entries = list.getEntries();
+
+				entries.forEach((entry) => {
+					// 根据不同的entry类型处理不同的性能指标
+					switch (entry.entryType) {
+						case 'navigation':
+							{
+								const navEntry = entry;
+								metrics = {
+									...metrics,
+									dns: navEntry.domainLookupEnd - navEntry.domainLookupStart,
+									response: navEntry.responseEnd - navEntry.responseStart,
+									dom_parse: navEntry.domInteractive - navEntry.responseEnd,
+									dom_ready: navEntry.domContentLoadedEventEnd - navEntry.fetchStart,
+									resource: navEntry.domComplete - navEntry.domContentLoadedEventEnd,
+									first_interactive: navEntry.domInteractive - navEntry.fetchStart,
+									first_byte: navEntry.responseStart - navEntry.domainLookupStart,
+									loaded: navEntry.loadEventEnd - navEntry.fetchStart
+								};
+								sessionStorage.setItem('performance', JSON.stringify(metrics));
+								// 发送性能指标到阿里云日志服务
+							}
+							break;
+
+						case 'paint':
+							if (entry.name === 'first-paint') {
+								metrics = {
+									...metrics,
+									first_paint: entry.startTime
+								};
+								sessionStorage.setItem('performance', JSON.stringify(metrics));
+							}
+							if (entry.name === 'first-contentful-paint') {
+								metrics = {
+									...metrics,
+									first_contentful_paint: entry.startTime
+								};
+								sessionStorage.setItem('performance', JSON.stringify(metrics));
+							}
+							break;
+					}
+				});
+			});
+
+			// 观察的性能指标类型
+			observer.observe({
+				entryTypes: ['navigation', 'paint']
+			});
+		</script>
+
+		<script>
+			function resizeIframe(obj) {
+				obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
+			}
+		</script>
+
+		<script>
+			// On page load or when changing themes, best to add inline in `head` to avoid FOUC
+			const initTheme = () => {
+				const metaThemeColorTag = document.querySelector('meta[name="theme-color"]');
+				// 取用户浏览器设置的主题
+				// const prefersTheme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+
+				const prefersTheme = 'light';
+
+				if (!localStorage?.theme) {
+					localStorage.theme = prefersTheme;
+				}
+
+				if (localStorage.theme === 'system') {
+					document.documentElement.classList.add(prefersTheme);
+					metaThemeColorTag.setAttribute(
+						'content',
+						prefersTheme === 'light' ? '#F4F6F8' : '#141618'
+					);
+				} else if (localStorage.theme === 'light') {
+					document.documentElement.classList.add('light');
+					metaThemeColorTag.setAttribute('content', '#F4F6F8');
+				} else {
+					document.documentElement.classList.add('dark');
+					metaThemeColorTag.setAttribute('content', '#141618');
+				}
+
+				// window.matchMedia('(prefers-color-scheme: dark)').addListener((e) => {
+				// 	if (localStorage.theme === 'system') {
+				// 		if (e.matches) {
+				// 			document.documentElement.classList.add('dark');
+				// 			document.documentElement.classList.remove('light');
+				// 			metaThemeColorTag.setAttribute('content', '#141618');
+				// 		} else {
+				// 			document.documentElement.classList.add('light');
+				// 			document.documentElement.classList.remove('dark');
+				// 			metaThemeColorTag.setAttribute('content', '#F4F6F8');
+				// 		}
+				// 	}
+				// });
+
+				function setSplashImage() {
+					const logo = document.getElementById('logo');
+					const isDarkMode = document.documentElement.classList.contains('dark');
+					const splashContainer = document.getElementById('splash-screen');
+
+					if (isDarkMode) {
+						const darkImage = new Image();
+						darkImage.src = 'https://z-cdn.chatglm.cn/z-ai/static/logo.svg';
+						splashContainer.style.backgroundColor = '#141618';
+
+						darkImage.onload = () => {
+							logo.src = 'https://z-cdn.chatglm.cn/z-ai/static/logo.svg';
+							logo.style.filter = ''; // Ensure no inversion is applied if splash-dark.png exists
+						};
+
+						darkImage.onerror = () => {
+							logo.style.filter = 'invert(1)'; // Invert image if splash-dark.png is missing
+						};
+					} else {
+						splashContainer.style.backgroundColor = '#F4F6F8';
+					}
+				}
+
+				// Runs after classes are assigned
+				window.addEventListener('DOMContentLoaded', setSplashImage, { once: true });
+			};
+			initTheme();
+		</script>
+
+		
+
+		<script>
+			// 炫酷的控制台介绍 - 根据语言显示
+			(function () {
+				// 检测用户语言偏好
+				const userLang = navigator.language || navigator.userLanguage;
+				const isChinese =
+					userLang.startsWith('zh') ||
+					userLang.includes('CN') ||
+					userLang.includes('TW') ||
+					userLang.includes('HK');
+
+				// 共同的 ASCII Logo
+				const logoLines = [
+					'%c███████╗     █████╗ ██╗',
+					'%c╚══███╔╝    ██╔══██╗██║',
+					'%c  ███╔╝     ███████║██║',
+					'%c ███╔╝      ██╔══██║██║',
+					'%c███████╗ ██╗██║  ██║██║',
+					'%c╚══════╝ ╚═╝╚═╝  ╚═╝╚═╝'
+				];
+				const logoColors = [
+					'color: #ff6b6b; font-family: monospace; font-size: 12px;',
+					'color: #4ecdc4; font-family: monospace; font-size: 12px;',
+					'color: #45b7d1; font-family: monospace; font-size: 12px;',
+					'color: #f9ca24; font-family: monospace; font-size: 12px;',
+					'color: #ff9ff3; font-family: monospace; font-size: 12px;',
+					'color: #6c5ce7; font-family: monospace; font-size: 12px;'
+				];
+
+				if (isChinese) {
+					// 中文版本
+					console.log(
+						'%c🚀 欢迎来到 Z.ai 🚀',
+						'color: #00d4ff; font-size: 20px; font-weight: bold; text-shadow: 0 0 10px #00d4ff;'
+					);
+					logoLines.forEach((line, index) => console.log(line, logoColors[index]));
+					console.log('');
+					console.log(
+						'%c✨ 基于开源GLM模型的智能AI助手',
+						'color: #a29bfe; font-size: 14px; font-weight: bold;'
+					);
+					console.log('%c🧠 支持文本生成、推理和深度研究', 'color: #fd79a8; font-size: 12px;');
+					console.log('%c🌍 为中英文用户量身定制', 'color: #00b894; font-size: 12px;');
+					console.log('%c💡 免费开源的ChatGPT替代方案', 'color: #fdcb6e; font-size: 12px;');
+					console.log('');
+					console.log('%c---', 'color: #ddd;');
+					console.log(
+						'%c由 ❤️ 和大量 ☕ 驱动',
+						'color: #e84393; font-size: 11px; font-style: italic;'
+					);
+					console.log('');
+					console.log(
+						'%c🚀 加入我们！我们正在招聘优秀人才！',
+						'color: #00b894; font-size: 13px; font-weight: bold;'
+					);
+					console.log(
+						'%c💼 查看职位: https://zhipu-ai.jobs.feishu.cn/s/stmyTm5lxaU',
+						'color: #0984e3; font-size: 12px; text-decoration: underline;'
+					);
+				} else {
+					// 英文版本
+					console.log(
+						'%c🚀 Welcome to Z.ai 🚀',
+						'color: #00d4ff; font-size: 20px; font-weight: bold; text-shadow: 0 0 10px #00d4ff;'
+					);
+					logoLines.forEach((line, index) => console.log(line, logoColors[index]));
+					console.log('');
+					console.log(
+						'%c✨ Advanced AI assistant powered by open-source GLM models',
+						'color: #a29bfe; font-size: 14px; font-weight: bold;'
+					);
+					console.log(
+						'%c🧠 Supports text generation, reasoning, and deep research',
+						'color: #fd79a8; font-size: 12px;'
+					);
+					console.log(
+						'%c🌍 Tailored for both English and Chinese users',
+						'color: #00b894; font-size: 12px;'
+					);
+					console.log(
+						'%c💡 Free and open-source ChatGPT alternative',
+						'color: #fdcb6e; font-size: 12px;'
+					);
+					console.log('');
+					console.log('%c---', 'color: #ddd;');
+					console.log(
+						'%cPowered by ❤️ and lots of ☕',
+						'color: #e84393; font-size: 11px; font-style: italic;'
+					);
+					console.log('');
+					console.log(
+						'%c🚀 Join us! We are hiring talented people!',
+						'color: #00b894; font-size: 13px; font-weight: bold;'
+					);
+					console.log(
+						'%c💼 View jobs: https://zhipu-ai.jobs.feishu.cn/s/stmyTm5lxaU',
+						'color: #0984e3; font-size: 12px; text-decoration: underline;'
+					);
+				}
+			})();
+		</script>
+
+		<script type="module" crossorigin="" src="https://z-cdn.chatglm.cn/z-ai/frontend/prod-fe-1.1.34/assets/index-CoZnJApV.js"></script>
+		<link rel="stylesheet" crossorigin="" href="https://z-cdn.chatglm.cn/z-ai/frontend/prod-fe-1.1.34/assets/index-CB3-Oe58.css">
+	<title>Z.ai - Free AI Chatbot &amp; Agent powered by GLM-5.1 &amp; GLM-5</title><meta name="description" content="Amazing content sharing from Z.AI"><meta property="og:type" content="website"><meta property="og:site_name" content="Z.AI"><meta property="og:title" content="Z.AI Share"><meta property="og:description" content="Amazing content sharing from Z.AI"><meta property="og:image" content="https://z-cdn.chatglm.cn/z-ai/static/share-logo.png"><meta property="og:image:alt" content="Z.AI Share"><meta property="og:image:width" content="400"><meta property="og:image:height" content="400"><meta property="og:image:type" content="image/png"><meta property="og:url" content="http://chat.z.ai/space/h1f83429u060-art"><meta property="article:author" content="Z.AI"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Z.AI Share"><meta name="twitter:description" content="Amazing content sharing from Z.AI"><meta name="twitter:image" content="https://z-cdn.chatglm.cn/z-ai/static/share-logo.png"><meta name="twitter:image:alt" content="Z.AI Share"><meta name="robots" content="index,follow"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="application-name" content="Z.AI"><meta name="theme-color" content="#1976d2"><meta name="msapplication-TileColor" content="#1976d2"><link rel="canonical" href="http://chat.z.ai/space/h1f83429u060-art"><script src="https://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
+<script>
+(function() {
+  var frontendCallId = Math.random().toString(36).substring(2, 8);
+  console.log('[WeChat-Frontend-' + frontendCallId + '] ===== 开始前端微信JS-SDK初始化 =====');
+  console.log('[WeChat-Frontend-' + frontendCallId + '] 当前页面URL:', window.location.href);
+  console.log('[WeChat-Frontend-' + frontendCallId + '] 当前页面URL (去掉#):', window.location.href.split('#')[0]);
+  console.log('[WeChat-Frontend-' + frontendCallId + '] 签名配置:', {
+    debug: false,
+    appId: 'wxa5796e47c57570b1',
+    timestamp: 1779285186,
+    nonceStr: 'Ddrbzj5GnX7TD1QQ',
+    signature: '8da61eb013f3cd145a781241230ff45e4ee2c6f0',
+    jsApiList: ["updateAppMessageShareData","updateTimelineShareData","onMenuShareAppMessage","onMenuShareTimeline"]
+  });
+
+  // 微信 JS-SDK 配置
+  wx.config({
+    debug: false, // 根据环境变量设置debug模式
+    appId: 'wxa5796e47c57570b1', // 公众号的唯一标识
+    timestamp: 1779285186, // 生成签名的时间戳
+    nonceStr: 'Ddrbzj5GnX7TD1QQ', // 生成签名的随机串
+    signature: '8da61eb013f3cd145a781241230ff45e4ee2c6f0', // 签名
+    jsApiList: ["updateAppMessageShareData","updateTimelineShareData","onMenuShareAppMessage","onMenuShareTimeline"] // 需要使用的JS接口列表
+  });
+
+  console.log('[WeChat-Frontend-' + frontendCallId + '] wx.config() 调用完成');
+
+  // 微信 JS-SDK 就绪回调
+  wx.ready(function () {
+    console.log('[WeChat-Frontend-' + frontendCallId + '] WeChat JS-SDK ready - 微信JS-SDK就绪!');
+
+    // 分享给朋友的配置
+    console.log('[WeChat-Frontend-' + frontendCallId + '] 开始配置分享给朋友...');
+    wx.updateAppMessageShareData({
+      title: 'Z.AI Share',
+      desc: 'Amazing content sharing from Z.AI',
+      link: 'http://chat.z.ai/space/h1f83429u060-art',
+      imgUrl: 'https://z-cdn.chatglm.cn/z-ai/static/share-logo.png',
+      success: function () {
+        console.log('[WeChat-Frontend-' + frontendCallId + '] 分享给朋友成功');
+      },
+      cancel: function () {
+        console.log('[WeChat-Frontend-' + frontendCallId + '] 分享给朋友取消');
+      }
+    });
+
+    // 分享到朋友圈的配置
+    console.log('[WeChat-Frontend-' + frontendCallId + '] 开始配置分享到朋友圈...');
+    wx.updateTimelineShareData({
+      title: 'Z.AI Share',
+      link: 'http://chat.z.ai/space/h1f83429u060-art',
+      imgUrl: 'https://z-cdn.chatglm.cn/z-ai/static/share-logo.png',
+      success: function () {
+        console.log('[WeChat-Frontend-' + frontendCallId + '] 分享到朋友圈成功');
+      },
+      cancel: function () {
+        console.log('[WeChat-Frontend-' + frontendCallId + '] 分享到朋友圈取消');
+      }
+    });
+
+    // 兼容旧版本微信客户端
+    console.log('[WeChat-Frontend-' + frontendCallId + '] 开始配置兼容旧版本分享...');
+    wx.onMenuShareAppMessage({
+      title: 'Z.AI Share',
+      desc: 'Amazing content sharing from Z.AI',
+      link: 'http://chat.z.ai/space/h1f83429u060-art',
+      imgUrl: 'https://z-cdn.chatglm.cn/z-ai/static/share-logo.png',
+      success: function () {
+        console.log('[WeChat-Frontend-' + frontendCallId + '] 兼容版分享给朋友成功');
+      },
+      cancel: function () {
+        console.log('[WeChat-Frontend-' + frontendCallId + '] 兼容版分享给朋友取消');
+      }
+    });
+
+    wx.onMenuShareTimeline({
+      title: 'Z.AI Share',
+      link: 'http://chat.z.ai/space/h1f83429u060-art',
+      imgUrl: 'https://z-cdn.chatglm.cn/z-ai/static/share-logo.png',
+      success: function () {
+        console.log('[WeChat-Frontend-' + frontendCallId + '] 兼容版分享到朋友圈成功');
+      },
+      cancel: function () {
+        console.log('[WeChat-Frontend-' + frontendCallId + '] 兼容版分享到朋友圈取消');
+      }
+    });
+
+    console.log('[WeChat-Frontend-' + frontendCallId + '] 所有分享配置完成');
+  });
+
+  // 微信 JS-SDK 错误回调
+  wx.error(function(res){
+    console.error('[WeChat-Frontend-' + frontendCallId + '] 微信JS-SDK错误:', res);
+    console.error('[WeChat-Frontend-' + frontendCallId + '] 错误详情:', JSON.stringify(res, null, 2));
+    // 可以在这里处理签名验证失败等错误
+  });
+
+  console.log('[WeChat-Frontend-' + frontendCallId + '] ===== 微信JS-SDK初始化完成 =====');
+})();
+</script><link rel="modulepreload" as="script" crossorigin="" href="https://z-cdn.chatglm.cn/z-ai/frontend/prod-fe-1.1.34/assets/_page-C11Eb81u.js"><link rel="modulepreload" as="script" crossorigin="" href="https://z-cdn.chatglm.cn/z-ai/frontend/prod-fe-1.1.34/assets/PPTViewer-CB70Jj4k.js"><link rel="modulepreload" as="script" crossorigin="" href="https://z-cdn.chatglm.cn/z-ai/frontend/prod-fe-1.1.34/assets/KiraKira-D8npE41P.js"><link rel="stylesheet" crossorigin="" href="https://z-cdn.chatglm.cn/z-ai/frontend/prod-fe-1.1.34/assets/PPTViewer-3CViShiz.css"></head>
+
+	<body><script src="https://sdk.rum.aliyuncs.com/v2/browser-sdk.js" crossorigin=""></script>
+		<script>
+			const env = location.hostname === 'chat.z.ai' ? 'prod' : 'pre';
+			!(function (c, b, d, a) {
+				c[a] || (c[a] = {});
+				c[a] = {
+					pid: 'j2c03hoppk@9a8be198b65ba4b',
+					endpoint: 'https://j2c03hoppk-default-cn.rum.aliyuncs.com',
+					// 设置环境信息，参考值：'prod' | 'gray' | 'pre' | 'daily' | 'local'
+					env: env,
+					// 设置路由模式， 参考值：'history' | 'hash'
+					spaMode: 'history',
+					collectors: {
+						// 页面性能指标监听开关，默认开启
+						perf: true,
+						// WebVitals指标监听开关，默认开启
+						webVitals: false,
+						// Ajax监听开关，默认开启
+						api: true,
+						// 静态资源开关，默认开启
+						staticResource: true,
+						// JS错误监听开关，默认开启
+						jsError: true,
+						// 控制台错误监听开关，默认开启
+						consoleError: false,
+						// 用户行为监听开关，默认开启
+						action: true
+					},
+					// 链路追踪配置开关，默认关闭
+					tracing: false,
+					parseViewName(url) {
+						const pathname = new URL(url).pathname;
+						if (!pathname) {
+							return '/';
+						}
+						return pathname.replace(/(.*)\/[a-f0-9-]+$/g, '$1');
+					},
+					evaluateApi(options, response) {
+						const traceId = response?.headers?.get?.('X-Trace-Id') || 'unknown';
+
+						return {
+							name: options.url.replace(/\/[a-f0-9-]{36}/g, '/**'),
+							properties: {
+								traceId
+							}
+						};
+					}
+				};
+				with (b)
+					with (body)
+						with (insertBefore(createElement('script'), firstChild))
+							setAttribute('crossorigin', '', (src = d));
+			})(window, document, 'https://sdk.rum.aliyuncs.com/v2/browser-sdk.js', '__rum');
+		</script>
+		<div id="app" style="display: contents"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><iframe class="w-screen h-screen" frameborder="0" sandbox="allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox" title="html" srcdoc="
+		&lt;!DOCTYPE html&gt;
+		&lt;html lang=&quot;en&quot;&gt;
+			&lt;head&gt;
+				&lt;meta charset=&quot;UTF-8&quot;&gt;
+				&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+				&lt;style&gt;
+					body {
+						background-color: white; /* Ensure the iframe has a white background */
+					}
+				&lt;/style&gt;
+				&lt;script&gt;
+					var Z_CDN_WHITELIST = [
+						'cdn.jsdelivr.net',
+						'cdnjs.cloudflare.com',
+						'cdn.tailwindcss.com',
+						'unpkg.com',
+						'fonts.googleapis.com',
+						'd3js.org',
+						'cdn.babylonjs.com',
+						'html2canvas.hertzen.com',
+						'code.jquery.com',
+						'cdn.datatables.net',
+						'kit.fontawesome.com',
+						'code.createjs.com',
+						'cdn.plot.ly',
+						'fonts.gstatic.com',
+						'www.rgraph.net',
+						'api.mapbox.com',
+						'polyfill.io',
+						'cdn.quilljs.com',
+						'picsum.photos',
+						'esm.sh'
+					];
+
+					function z_isUrlInWhitelist(url) {
+						if (!url || typeof url !== 'string') {
+							return false;
+						}
+						try {
+							const urlObj = new URL(url);
+							const hostname = urlObj.hostname;
+							return Z_CDN_WHITELIST.some(domain =&gt; hostname === domain);
+						} catch (e) {
+							return false;
+						}
+					}
+
+						function z_proxyCdnUrl(url) {
+						if (!url || !url.startsWith('http')) {
+							return url;
+						}
+							if (!z_isUrlInWhitelist(url)) {
+							return url;
+						}
+						if (!url.startsWith('https://artifacts-cdn.chatglm.site/')) {
+							return 'https://artifacts-cdn.chatglm.site/' + url;
+						}
+						return url;
+					}
+					
+					// 增强版外部链接拦截 - 适合放在模板字符串中
+					document.addEventListener('click', function (ev) {
+						try {
+							const anchor = ev.target?.closest?.('a[href]') || null;
+							if (!anchor) return;
+
+							let href = anchor.getAttribute('href')?.trim() || '';
+							if (!href) return;
+
+							if (href.startsWith('javascript:')) return;
+
+							// 新需求：href=&quot;#&quot; 的链接完全阻止跳转和任何行为
+							if (href === '#') {
+								ev.preventDefault();
+								return;
+							}
+
+							// 处理其他内部锚点（如 #about、#contact 等）
+							if (href.startsWith('#')) {
+								const rawId = href.slice(1);
+								if (!rawId) return;
+
+								const id = decodeURIComponent(rawId);
+								const target = 
+									document.getElementById(id) ||
+									document.querySelector('a[name=&quot;' + id.replace(/&quot;/g, '\&quot;') + '&quot;]') ||
+									document.querySelector('[name=&quot;' + id.replace(/&quot;/g, '\&quot;') + '&quot;]');
+
+								if (target &amp;&amp; target.scrollIntoView) {
+									ev.preventDefault();
+									try {
+										history.pushState(null, '', href);
+									} catch (e) {}
+									target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+								}
+								return;
+							}
+
+							// 处理外部链接
+							let url;
+							try {
+								url = new URL(href, window.location.href);
+							} catch (e) {
+								return;
+							}
+
+							if (url.protocol !== 'http:' &amp;&amp; url.protocol !== 'https:') return;
+
+							const isExternal = url.hostname !== window.location.hostname;
+
+							if (isExternal || anchor.getAttribute('target') === '_blank') {
+								ev.preventDefault();
+								window.open(url.toString(), '_blank', 'noopener,noreferrer');
+							}
+
+						} catch (e) {
+							// 出错时不阻止默认行为
+						}
+					}, true);
+
+					// 1. 暴力清除函数：从 DOM 层面抹除 onclick 属性
+					var Z_removeInlineOnclick = function () {
+						// 专门锁定 href=&quot;#&quot; 且带有 onclick 的 a 标签
+						const targetedLinks = document.querySelectorAll('a[href=&quot;#&quot;][onclick]');
+						for (let i = 0; i &lt; targetedLinks.length; i++) {
+							targetedLinks[i].removeAttribute('onclick');
+							targetedLinks[i].onclick = null; // 确保 JS 层的赋值也被清理
+						}
+					};
+					// 3. 动态监测：防止页面通过异步加载重新生成带 onclick 的元素
+					var z_observer = new MutationObserver(function () {
+						Z_removeInlineOnclick();
+					});
+
+					z_observer.observe(document.documentElement, {
+						childList: true,
+						subtree: true,
+						attributes: true,
+						attributeFilter: ['onclick']
+					});
+
+					// 4. 初始化执行一次
+					Z_removeInlineOnclick();
+
+					const Z_rawCreateElement = document.createElement;
+
+					document.createElement = function (tagName, ...args) {
+						const el = Z_rawCreateElement.call(this, tagName, ...args);
+
+						if (tagName.toLowerCase() === 'script') {
+							const rawSetAttribute = el.setAttribute;
+							const rawGetAttribute = el.getAttribute;
+							let srcValue = '';
+							
+							el.setAttribute = function (name, value) {
+								if (name === 'src' &amp;&amp; typeof value === 'string') {
+									value = z_proxyCdnUrl(value);
+									srcValue = value;
+								}
+								return rawSetAttribute.call(this, name, value);
+							};
+
+							Object.defineProperty(el, 'src', {
+								get: function() {
+									return srcValue || rawGetAttribute.call(this, 'src') || '';
+								},
+								set: function(value) {
+									if (typeof value === 'string') {
+										srcValue = z_proxyCdnUrl(value);
+										rawSetAttribute.call(this, 'src', srcValue);
+									} else {
+										srcValue = value;
+									}
+								},
+								configurable: true,
+								enumerable: true
+							});
+						}
+
+						if (tagName.toLowerCase() === 'link') {
+							const rawSetAttribute = el.setAttribute;
+							const rawGetAttribute = el.getAttribute;
+							let hrefValue = '';
+							
+							el.setAttribute = function (name, value) {
+								if (name === 'href' &amp;&amp; typeof value === 'string') {
+									value = z_proxyCdnUrl(value);
+									hrefValue = value;
+								}
+								return rawSetAttribute.call(this, name, value);
+							};
+
+							Object.defineProperty(el, 'href', {
+								get: function() {
+									return hrefValue || rawGetAttribute.call(this, 'href') || '';
+								},
+								set: function(value) {
+									if (typeof value === 'string') {
+										hrefValue = z_proxyCdnUrl(value);
+										rawSetAttribute.call(this, 'href', hrefValue);
+									} else {
+										hrefValue = value;
+									}
+								},
+								configurable: true,
+								enumerable: true
+							});
+						}
+
+						return el;
+					};
+
+					const Z_OriginalXMLHttpRequest = window.XMLHttpRequest;
+					window.XMLHttpRequest = function (...args) {
+						const xhr = new Z_OriginalXMLHttpRequest(...args);
+						const rawOpen = xhr.open;
+
+						xhr.open = function (method, url, ...rest) {
+							if (typeof url === 'string') {
+								const methodUpper = (method || '').toUpperCase();
+								if (methodUpper === 'GET' &amp;&amp; z_isUrlInWhitelist(url)) {
+									url = z_proxyCdnUrl(url);
+								}
+							}
+							return rawOpen.call(this, method, url, ...rest);
+						};
+
+						return xhr;
+					};
+
+					window.XMLHttpRequest.prototype = Z_OriginalXMLHttpRequest.prototype;
+					Object.setPrototypeOf(window.XMLHttpRequest, Z_OriginalXMLHttpRequest);
+
+					const z_originalFetch = window.fetch;
+					window.fetch = async function (...args) {
+						if (args.length &gt; 0) {
+							let url = '';
+							let method = 'GET';
+							
+							if (typeof args[0] === 'string') {
+								url = args[0];
+								if (args[1] &amp;&amp; args[1].method) {
+									method = args[1].method.toUpperCase();
+								}
+								if (method === 'GET' &amp;&amp; z_isUrlInWhitelist(url)) {
+									args[0] = z_proxyCdnUrl(url);
+								}
+							} else if (args[0] instanceof Request) {
+								const originalUrl = args[0].url;
+								method = (args[0].method || 'GET').toUpperCase();
+								if (method === 'GET' &amp;&amp; z_isUrlInWhitelist(originalUrl)) {
+									const proxiedUrl = z_proxyCdnUrl(originalUrl);
+									if (proxiedUrl !== originalUrl) {
+										args[0] = new Request(proxiedUrl, args[0]);
+									}
+								}
+							}
+						}
+						return z_originalFetch.apply(this, args);
+					};
+				&lt;/script&gt;
+			&lt;/head&gt;
+			&lt;body&gt;
+				&lt;html lang=&quot;ru&quot;&gt;&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;title&gt;Общество друзей Московского Епархиального Дома — Набор закрыт&lt;/title&gt;
+  &lt;link href=&quot;https://artifacts-cdn.chatglm.site/https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;amp;family=Inter:wght@300;400;500;600&amp;amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+  &lt;script src=&quot;https://code.iconify.design/3/3.1.0/iconify.min.js&quot;&gt;&lt;/script&gt;
+  &lt;style&gt;
     *, *::before, *::after {
       margin: 0;
       padding: 0;
@@ -369,7 +1047,7 @@
       position: absolute;
       inset: 0;
       opacity: 0.04;
-      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C9A84C'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      background-image: url(&quot;data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C9A84C'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E&quot;);
     }
 
     .notify-section__inner {
@@ -721,234 +1399,222 @@
         grid-template-columns: 1fr;
       }
     }
-  </style>
-</head>
-<body>
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
 
-  <!-- ===== HERO ===== -->
-  <section class="hero-closed">
-    <div class="hero-closed__bg"></div>
-    <div class="hero-closed__overlay"></div>
-    <div class="hero-closed__content">
-      <div class="hero-closed__badge">
-        <span class="iconify" data-icon="lucide:clock"></span>
+  &lt;!-- ===== HERO ===== --&gt;
+  &lt;section class=&quot;hero-closed&quot;&gt;
+    &lt;div class=&quot;hero-closed__bg&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;hero-closed__overlay&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;hero-closed__content&quot;&gt;
+      &lt;div class=&quot;hero-closed__badge&quot;&gt;
+        &lt;span class=&quot;iconify&quot; data-icon=&quot;lucide:clock&quot;&gt;&lt;/span&gt;
         Набор временно приостановлен
-      </div>
-      <h1 class="hero-closed__title">
-        Общество друзей<br><span>Московского Епархиального Дома</span>
-      </h1>
-      <p class="hero-closed__subtitle">
+      &lt;/div&gt;
+      &lt;h1 class=&quot;hero-closed__title&quot;&gt;
+        Общество друзей&lt;br&gt;&lt;span&gt;Московского Епархиального Дома&lt;/span&gt;
+      &lt;/h1&gt;
+      &lt;p class=&quot;hero-closed__subtitle&quot;&gt;
         Благодарим за интерес к волонтёрскому клубу. В данный момент набор закрыт, но мы обязательно откроем его снова. Оставьте контакты, чтобы узнать первыми.
-      </p>
-    </div>
-    <div class="hero-closed__decor">
-      <svg viewBox="0 0 1440 60" preserveAspectRatio="none" fill="none">
-        <path d="M0 60L1440 60L1440 0C1200 50 960 20 720 40C480 60 240 10 0 30L0 60Z" fill="var(--color-cream)"/>
-      </svg>
-    </div>
-  </section>
+      &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;hero-closed__decor&quot;&gt;
+      &lt;svg viewBox=&quot;0 0 1440 60&quot; preserveAspectRatio=&quot;none&quot; fill=&quot;none&quot;&gt;
+        &lt;path d=&quot;M0 60L1440 60L1440 0C1200 50 960 20 720 40C480 60 240 10 0 30L0 60Z&quot; fill=&quot;var(--color-cream)&quot;&gt;&lt;/path&gt;
+      &lt;/svg&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
 
-  <!-- ===== MESSAGE ===== -->
-  <section class="message-section animate-in">
-    <div class="message-section__inner">
-      <div class="message-section__icon">
-        <span class="iconify" data-icon="lucide:heart-handshake"></span>
-      </div>
-      <h2 class="message-section__heading">Набор волонтёров временно закрыт</h2>
-      <p class="message-section__text">
-        Мы глубоко ценим ваше желание стать частью Общества друзей Московского Епархиального Дома. Сейчас мы не принимаем новые заявки, но <strong>следующий набор обязательно состоится</strong>. Чтобы не пропустить начало, подпишитесь на уведомление — мы напишем, как только откроем двери для новых друзей.
-      </p>
-    </div>
-  </section>
+  &lt;!-- ===== MESSAGE ===== --&gt;
+  &lt;section class=&quot;message-section animate-in&quot;&gt;
+    &lt;div class=&quot;message-section__inner&quot;&gt;
+      &lt;div class=&quot;message-section__icon&quot;&gt;
+        &lt;span class=&quot;iconify&quot; data-icon=&quot;lucide:heart-handshake&quot;&gt;&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;h2 class=&quot;message-section__heading&quot;&gt;Набор волонтёров временно закрыт&lt;/h2&gt;
+      &lt;p class=&quot;message-section__text&quot;&gt;
+        Мы глубоко ценим ваше желание стать частью Общества друзей Московского Епархиального Дома. Сейчас мы не принимаем новые заявки, но &lt;strong&gt;следующий набор обязательно состоится&lt;/strong&gt;. Чтобы не пропустить начало, подпишитесь на уведомление — мы напишем, как только откроем двери для новых друзей.
+      &lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
 
-  <!-- ===== ABOUT CARDS ===== -->
-  <section class="about-section">
-    <div class="about-section__header animate-in">
-      <p class="about-section__label">О нашем клубе</p>
-      <h2 class="about-section__title">Чем занимаются друзья Епархиального Дома</h2>
-    </div>
-    <div class="about-grid">
-      <div class="about-card animate-in">
-        <div class="about-card__icon">
-          <span class="iconify" data-icon="lucide:book-open"></span>
-        </div>
-        <h3 class="about-card__title">Экскурсии и рассказы</h3>
-        <p class="about-card__desc">Проводим экскурсии по Московскому Епархиальному Дому, знакомим посетителей с историей здания и его значением для культуры</p>
-      </div>
-      <div class="about-card animate-in">
-        <div class="about-card__icon">
-          <span class="iconify" data-icon="lucide:calendar-heart"></span>
-        </div>
-        <h3 class="about-card__title">Мероприятия</h3>
-        <p class="about-card__desc">Помогаем организовывать и проводить культурные, образовательные и духовные мероприятия на площадке Епархиального Дома</p>
-      </div>
-      <div class="about-card animate-in">
-        <div class="about-card__icon">
-          <span class="iconify" data-icon="lucide:users"></span>
-        </div>
-        <h3 class="about-card__title">Сообщество</h3>
-        <p class="about-card__desc">Станьте частью тёплого круга единомышленников, объединённых любовью к истории, культуре и служению</p>
-      </div>
-    </div>
-  </section>
+  &lt;!-- ===== ABOUT CARDS ===== --&gt;
+  &lt;section class=&quot;about-section&quot;&gt;
+    &lt;div class=&quot;about-section__header animate-in&quot;&gt;
+      &lt;p class=&quot;about-section__label&quot;&gt;О нашем клубе&lt;/p&gt;
+      &lt;h2 class=&quot;about-section__title&quot;&gt;Чем занимаются друзья Епархиального Дома&lt;/h2&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;about-grid&quot;&gt;
+      &lt;div class=&quot;about-card animate-in&quot;&gt;
+        &lt;div class=&quot;about-card__icon&quot;&gt;
+          &lt;span class=&quot;iconify&quot; data-icon=&quot;lucide:book-open&quot;&gt;&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;h3 class=&quot;about-card__title&quot;&gt;Экскурсии и рассказы&lt;/h3&gt;
+        &lt;p class=&quot;about-card__desc&quot;&gt;Проводим экскурсии по Московскому Епархиальному Дому, знакомим посетителей с историей здания и его значением для культуры&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;about-card animate-in&quot;&gt;
+        &lt;div class=&quot;about-card__icon&quot;&gt;
+          &lt;span class=&quot;iconify&quot; data-icon=&quot;lucide:calendar-heart&quot;&gt;&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;h3 class=&quot;about-card__title&quot;&gt;Мероприятия&lt;/h3&gt;
+        &lt;p class=&quot;about-card__desc&quot;&gt;Помогаем организовывать и проводить культурные, образовательные и духовные мероприятия на площадке Епархиального Дома&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;about-card animate-in&quot;&gt;
+        &lt;div class=&quot;about-card__icon&quot;&gt;
+          &lt;span class=&quot;iconify&quot; data-icon=&quot;lucide:users&quot;&gt;&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;h3 class=&quot;about-card__title&quot;&gt;Сообщество&lt;/h3&gt;
+        &lt;p class=&quot;about-card__desc&quot;&gt;Станьте частью тёплого круга единомышленников, объединённых любовью к истории, культуре и служению&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
 
-  <!-- ===== STEPS ===== -->
-  <section class="steps-section">
-    <div class="steps-section__header animate-in">
-      <p class="steps-section__label">Как будет проходить набор</p>
-      <h2 class="steps-section__title">Путь от заявки до участия</h2>
-    </div>
-    <div class="steps-list">
-      <div class="step-item animate-in">
-        <div class="step-item__number">1</div>
-        <div class="step-item__content">
-          <div class="step-item__title">Оставьте контакты</div>
-          <p class="step-item__desc">Заполните форму ниже — мы сохраним ваши данные и свяжемся, когда набор откроется</p>
-        </div>
-      </div>
-      <div class="step-item animate-in">
-        <div class="step-item__number">2</div>
-        <div class="step-item__content">
-          <div class="step-item__title">Получите приглашение</div>
-          <p class="step-item__desc">Как только стартует новый набор, мы отправим вам письмо или сообщение с подробностями</p>
-        </div>
-      </div>
-      <div class="step-item animate-in">
-        <div class="step-item__number">3</div>
-        <div class="step-item__content">
-          <div class="step-item__title">Заполните анкету</div>
-          <p class="step-item__desc">Расскажите о себе, своих интересах и мотивации — это поможет нам лучше познакомиться</p>
-        </div>
-      </div>
-      <div class="step-item animate-in">
-        <div class="step-item__number">4</div>
-        <div class="step-item__content">
-          <div class="step-item__title">Добро пожаловать!</div>
-          <p class="step-item__desc">Пройдите вводную встречу и начните участвовать в жизни Общества друзей</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  &lt;!-- ===== STEPS ===== --&gt;
+  &lt;section class=&quot;steps-section&quot;&gt;
+    &lt;div class=&quot;steps-section__header animate-in&quot;&gt;
+      &lt;p class=&quot;steps-section__label&quot;&gt;Как будет проходить набор&lt;/p&gt;
+      &lt;h2 class=&quot;steps-section__title&quot;&gt;Путь от заявки до участия&lt;/h2&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;steps-list&quot;&gt;
+      &lt;div class=&quot;step-item animate-in&quot;&gt;
+        &lt;div class=&quot;step-item__number&quot;&gt;1&lt;/div&gt;
+        &lt;div class=&quot;step-item__content&quot;&gt;
+          &lt;div class=&quot;step-item__title&quot;&gt;Оставьте контакты&lt;/div&gt;
+          &lt;p class=&quot;step-item__desc&quot;&gt;Заполните форму ниже — мы сохраним ваши данные и свяжемся, когда набор откроется&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;step-item animate-in&quot;&gt;
+        &lt;div class=&quot;step-item__number&quot;&gt;2&lt;/div&gt;
+        &lt;div class=&quot;step-item__content&quot;&gt;
+          &lt;div class=&quot;step-item__title&quot;&gt;Получите приглашение&lt;/div&gt;
+          &lt;p class=&quot;step-item__desc&quot;&gt;Как только стартует новый набор, мы отправим вам письмо или сообщение с подробностями&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;step-item animate-in&quot;&gt;
+        &lt;div class=&quot;step-item__number&quot;&gt;3&lt;/div&gt;
+        &lt;div class=&quot;step-item__content&quot;&gt;
+          &lt;div class=&quot;step-item__title&quot;&gt;Заполните анкету&lt;/div&gt;
+          &lt;p class=&quot;step-item__desc&quot;&gt;Расскажите о себе, своих интересах и мотивации — это поможет нам лучше познакомиться&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;step-item animate-in&quot;&gt;
+        &lt;div class=&quot;step-item__number&quot;&gt;4&lt;/div&gt;
+        &lt;div class=&quot;step-item__content&quot;&gt;
+          &lt;div class=&quot;step-item__title&quot;&gt;Добро пожаловать!&lt;/div&gt;
+          &lt;p class=&quot;step-item__desc&quot;&gt;Пройдите вводную встречу и начните участвовать в жизни Общества друзей&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
 
-  <!-- ===== NOTIFY FORM ===== -->
-  <section class="notify-section">
-    <div class="notify-section__bg-pattern"></div>
-    <div class="notify-section__inner">
-      <div class="notify-section__icon">
-        <span class="iconify" data-icon="lucide:bell-ring"></span>
-      </div>
-      <h2 class="notify-section__title">Узнайте о наборе первым</h2>
-      <p class="notify-section__desc">Оставьте имя и почту — мы напишем, как только откроем новый набор волонтёров</p>
+  &lt;!-- ===== NOTIFY FORM ===== --&gt;
+  &lt;section class=&quot;notify-section&quot;&gt;
+    &lt;div class=&quot;notify-section__bg-pattern&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;notify-section__inner&quot;&gt;
+      &lt;div class=&quot;notify-section__icon&quot;&gt;
+        &lt;span class=&quot;iconify&quot; data-icon=&quot;lucide:bell-ring&quot;&gt;&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;h2 class=&quot;notify-section__title&quot;&gt;Узнайте о наборе первым&lt;/h2&gt;
+      &lt;p class=&quot;notify-section__desc&quot;&gt;Оставьте имя и почту — мы напишем, как только откроем новый набор волонтёров&lt;/p&gt;
 
-      <form class="notify-form" id="notifyForm" onsubmit="return handleNotifySubmit(event)">
-        <div class="notify-form__row">
-          <input
-            type="text"
-            class="notify-form__input"
-            placeholder="Ваше имя"
-            required
-            id="notifyName"
-          >
-          <input
-            type="email"
-            class="notify-form__input"
-            placeholder="Электронная почта"
-            required
-            id="notifyEmail"
-          >
-        </div>
-        <button type="submit" class="notify-form__button" id="notifyBtn">
+      &lt;form class=&quot;notify-form&quot; id=&quot;notifyForm&quot; onsubmit=&quot;return handleNotifySubmit(event)&quot;&gt;
+        &lt;div class=&quot;notify-form__row&quot;&gt;
+          &lt;input type=&quot;text&quot; class=&quot;notify-form__input&quot; placeholder=&quot;Ваше имя&quot; required=&quot;&quot; id=&quot;notifyName&quot;&gt;
+          &lt;input type=&quot;email&quot; class=&quot;notify-form__input&quot; placeholder=&quot;Электронная почта&quot; required=&quot;&quot; id=&quot;notifyEmail&quot;&gt;
+        &lt;/div&gt;
+        &lt;button type=&quot;submit&quot; class=&quot;notify-form__button&quot; id=&quot;notifyBtn&quot;&gt;
           Подписаться на уведомление
-        </button>
-        <p class="notify-form__consent">
-          Нажимая кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a>. Мы не рассылаем спам.
-        </p>
-      </form>
+        &lt;/button&gt;
+        &lt;p class=&quot;notify-form__consent&quot;&gt;
+          Нажимая кнопку, вы соглашаетесь с &lt;a href=&quot;#&quot;&gt;политикой конфиденциальности&lt;/a&gt;. Мы не рассылаем спам.
+        &lt;/p&gt;
+      &lt;/form&gt;
 
-      <div class="notify-success" id="notifySuccess">
-        <div class="notify-success__icon">
-          <span class="iconify" data-icon="lucide:check"></span>
-        </div>
-        <p class="notify-success__text">Вы в списке!</p>
-        <p class="notify-success__sub">Мы обязательно сообщим, когда набор откроется</p>
-      </div>
-    </div>
-  </section>
+      &lt;div class=&quot;notify-success&quot; id=&quot;notifySuccess&quot;&gt;
+        &lt;div class=&quot;notify-success__icon&quot;&gt;
+          &lt;span class=&quot;iconify&quot; data-icon=&quot;lucide:check&quot;&gt;&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;p class=&quot;notify-success__text&quot;&gt;Вы в списке!&lt;/p&gt;
+        &lt;p class=&quot;notify-success__sub&quot;&gt;Мы обязательно сообщим, когда набор откроется&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
 
-  <!-- ===== FAQ ===== -->
-  <section class="faq-section">
-    <div class="faq-section__header animate-in">
-      <h2 class="faq-section__title">Частые вопросы</h2>
-    </div>
-    <div class="faq-list">
-      <div class="faq-item animate-in">
-        <button class="faq-item__question" onclick="toggleFaq(this)">
-          <span>Когда откроется следующий набор?</span>
-          <span class="iconify faq-item__arrow" data-icon="lucide:chevron-down"></span>
-        </button>
-        <div class="faq-item__answer">
-          <p>Точные даты мы объявляем на сайте и в социальных сетях. Как правило, набор проходит 2–3 раза в год. Подпишитесь на уведомление, чтобы не пропустить.</p>
-        </div>
-      </div>
-      <div class="faq-item animate-in">
-        <button class="faq-item__question" onclick="toggleFaq(this)">
-          <span>Кто может стать волонтёром?</span>
-          <span class="iconify faq-item__arrow" data-icon="lucide:chevron-down"></span>
-        </button>
-        <div class="faq-item__answer">
-          <p>Любой совершеннолетний человек, разделяющий ценности Общества и готовый уделять время добровольческой деятельности. Специальных навыков не требуется — всему научим.</p>
-        </div>
-      </div>
-      <div class="faq-item animate-in">
-        <button class="faq-item__question" onclick="toggleFaq(this)">
-          <span>Сколько времени нужно уделять?</span>
-          <span class="iconify faq-item__arrow" data-icon="lucide:chevron-down"></span>
-        </button>
-        <div class="faq-item__answer">
-          <p>Мы просим минимум 4–6 часов в месяц. Расписание гибкое и обсуждается индивидуально. Главное — желание и регулярность.</p>
-        </div>
-      </div>
-      <div class="faq-item animate-in">
-        <button class="faq-item__question" onclick="toggleFaq(this)">
-          <span>Могу ли я подписаться, если уже подавал заявку раньше?</span>
-          <span class="iconify faq-item__arrow" data-icon="lucide:chevron-down"></span>
-        </button>
-        <div class="faq-item__answer">
-          <p>Да, конечно. Если вы ранее участвовали или подавали заявку, вы можете снова оставить контакты — мы учтём вашу историю и свяжемся в первую очередь.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  &lt;!-- ===== FAQ ===== --&gt;
+  &lt;section class=&quot;faq-section&quot;&gt;
+    &lt;div class=&quot;faq-section__header animate-in&quot;&gt;
+      &lt;h2 class=&quot;faq-section__title&quot;&gt;Частые вопросы&lt;/h2&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;faq-list&quot;&gt;
+      &lt;div class=&quot;faq-item animate-in&quot;&gt;
+        &lt;button class=&quot;faq-item__question&quot; onclick=&quot;toggleFaq(this)&quot;&gt;
+          &lt;span&gt;Когда откроется следующий набор?&lt;/span&gt;
+          &lt;span class=&quot;iconify faq-item__arrow&quot; data-icon=&quot;lucide:chevron-down&quot;&gt;&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;div class=&quot;faq-item__answer&quot;&gt;
+          &lt;p&gt;Точные даты мы объявляем на сайте и в социальных сетях. Как правило, набор проходит 2–3 раза в год. Подпишитесь на уведомление, чтобы не пропустить.&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;faq-item animate-in&quot;&gt;
+        &lt;button class=&quot;faq-item__question&quot; onclick=&quot;toggleFaq(this)&quot;&gt;
+          &lt;span&gt;Кто может стать волонтёром?&lt;/span&gt;
+          &lt;span class=&quot;iconify faq-item__arrow&quot; data-icon=&quot;lucide:chevron-down&quot;&gt;&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;div class=&quot;faq-item__answer&quot;&gt;
+          &lt;p&gt;Любой совершеннолетний человек, разделяющий ценности Общества и готовый уделять время добровольческой деятельности. Специальных навыков не требуется — всему научим.&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;faq-item animate-in&quot;&gt;
+        &lt;button class=&quot;faq-item__question&quot; onclick=&quot;toggleFaq(this)&quot;&gt;
+          &lt;span&gt;Сколько времени нужно уделять?&lt;/span&gt;
+          &lt;span class=&quot;iconify faq-item__arrow&quot; data-icon=&quot;lucide:chevron-down&quot;&gt;&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;div class=&quot;faq-item__answer&quot;&gt;
+          &lt;p&gt;Мы просим минимум 4–6 часов в месяц. Расписание гибкое и обсуждается индивидуально. Главное — желание и регулярность.&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;faq-item animate-in&quot;&gt;
+        &lt;button class=&quot;faq-item__question&quot; onclick=&quot;toggleFaq(this)&quot;&gt;
+          &lt;span&gt;Могу ли я подписаться, если уже подавал заявку раньше?&lt;/span&gt;
+          &lt;span class=&quot;iconify faq-item__arrow&quot; data-icon=&quot;lucide:chevron-down&quot;&gt;&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;div class=&quot;faq-item__answer&quot;&gt;
+          &lt;p&gt;Да, конечно. Если вы ранее участвовали или подавали заявку, вы можете снова оставить контакты — мы учтём вашу историю и свяжемся в первую очередь.&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
 
-  <!-- ===== CONTACT BAR ===== -->
-  <section class="contact-bar">
-    <div class="contact-bar__inner">
-      <p class="contact-bar__text">
-        Есть вопросы? Напишите нам:<br>
-        <strong>volunteer@lihov6.ru</strong>
-      </p>
-      <div class="contact-bar__links">
-        <a href="mailto:volunteer@lihov6.ru" class="contact-bar__link contact-bar__link--primary">
-          <span class="iconify" data-icon="lucide:mail"></span>
+  &lt;!-- ===== CONTACT BAR ===== --&gt;
+  &lt;section class=&quot;contact-bar&quot;&gt;
+    &lt;div class=&quot;contact-bar__inner&quot;&gt;
+      &lt;p class=&quot;contact-bar__text&quot;&gt;
+        Есть вопросы? Напишите нам:&lt;br&gt;
+        &lt;strong&gt;volunteer@lihov6.ru&lt;/strong&gt;
+      &lt;/p&gt;
+      &lt;div class=&quot;contact-bar__links&quot;&gt;
+        &lt;a href=&quot;mailto:volunteer@lihov6.ru&quot; class=&quot;contact-bar__link contact-bar__link--primary&quot;&gt;
+          &lt;span class=&quot;iconify&quot; data-icon=&quot;lucide:mail&quot;&gt;&lt;/span&gt;
           Написать
-        </a>
-        <a href="https://t.me/lihov6" class="contact-bar__link contact-bar__link--secondary" target="_blank">
-          <span class="iconify" data-icon="lucide:send"></span>
+        &lt;/a&gt;
+        &lt;a href=&quot;https://t.me/lihov6&quot; class=&quot;contact-bar__link contact-bar__link--secondary&quot; target=&quot;_blank&quot;&gt;
+          &lt;span class=&quot;iconify&quot; data-icon=&quot;lucide:send&quot;&gt;&lt;/span&gt;
           Telegram
-        </a>
-      </div>
-    </div>
-  </section>
+        &lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
 
-  <script>
+  &lt;script&gt;
     // ===== Scroll animations =====
     function initScrollAnimations() {
       const elements = document.querySelectorAll('.animate-in');
       const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry, index) => {
+        (entries) =&gt; {
+          entries.forEach((entry, index) =&gt; {
             if (entry.isIntersecting) {
-              setTimeout(() => {
+              setTimeout(() =&gt; {
                 entry.target.classList.add('is-visible');
               }, index * 80);
               observer.unobserve(entry.target);
@@ -957,14 +1623,14 @@
         },
         { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
       );
-      elements.forEach((el) => observer.observe(el));
+      elements.forEach((el) =&gt; observer.observe(el));
     }
 
     // ===== FAQ toggle =====
     function toggleFaq(button) {
       const item = button.closest('.faq-item');
       const wasOpen = item.classList.contains('is-open');
-      document.querySelectorAll('.faq-item.is-open').forEach((el) => {
+      document.querySelectorAll('.faq-item.is-open').forEach((el) =&gt; {
         el.classList.remove('is-open');
       });
       if (!wasOpen) {
@@ -983,7 +1649,7 @@
       btn.disabled = true;
       btn.style.opacity = '0.7';
 
-      setTimeout(() => {
+      setTimeout(() =&gt; {
         form.style.display = 'none';
         success.classList.add('is-visible');
       }, 1200);
@@ -992,10 +1658,109 @@
     }
 
     // ===== Init =====
-    document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', () =&gt; {
       initScrollAnimations();
     });
-  </script>
+  &lt;/script&gt;
 
-</body>
-</html>
+
+&lt;/body&gt;&lt;/html&gt;
+			&lt;/body&gt;
+		&lt;/html&gt;
+"></iframe><!----> <section aria-live="polite" aria-relevant="additions text" aria-atomic="false" class="svelte-nbs0zk" tabindex="-1" aria-label="Notifications alt+T"><!----></section><!----> <div class="fixed top-[60px] right-4 z-[9999] flex flex-col gap-3 pointer-events-none"></div><!----><!----> <!----></div>
+
+		
+
+		<script>
+			var token = localStorage.getItem('token');
+			var base = window.WEBUI_BASE_URL || '';
+			var lang = localStorage.locale ?? (navigator.language.includes('zh') ? 'zh-CN' : 'en-US');
+			var config = {
+				credentials: 'include',
+				headers: {
+					Accept: 'application/json',
+					'Content-Type': 'application/json',
+					...(token ? { Authorization: `Bearer ${token}` } : {}),
+					'Accept-Language': lang
+				}
+			};
+
+			window.GLOBAL_FETCHES = {
+				session: fetch(`${base}/api/v1/auths/`, config).then(async (res) => {
+					if (res.status === 401) {
+						location.replace('/auth');
+					}
+					if (!res.ok) throw await res.json();
+					return res.json();
+				}),
+				config: fetch(`${base}/api/config`, config).then(async (res) => {
+					if (!res.ok) throw await res.json();
+					return res.json();
+				}),
+				models: token && fetch(`${base}/api/models`, config),
+				settings:
+					token &&
+					fetch(`${base}/api/v1/users/user/settings`, config).then(async (res) => {
+						if (!res.ok) throw await res.json();
+						return res.json();
+					})
+			};
+		</script>
+		<script async="" src="//o.alicdn.com/frontend-lib/common-lib/jquery.min.js"></script>
+	
+
+
+<style type="text/css" nonce="">
+	html {
+		overflow-y: hidden !important;
+	}
+
+	#splash-screen {
+		background: #f4f6f8;
+	}
+
+	html.dark #splash-screen {
+		background: #141618;
+	}
+
+	#progress-background {
+		display: none;
+	}
+
+	#progress-bar {
+		display: none;
+	}
+
+	html.her #logo {
+		display: none;
+	}
+
+	html.her #progress-background {
+		display: block;
+	}
+
+	html.her #progress-bar {
+		display: block;
+	}
+
+	@media (max-width: 24rem) {
+		html.her #progress-background {
+			display: none;
+		}
+
+		html.her #progress-bar {
+			display: none;
+		}
+	}
+
+	@keyframes pulse {
+		50% {
+			opacity: 0.65;
+		}
+	}
+
+	.animate-pulse-fast {
+		animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+	}
+</style>
+</body></html>
