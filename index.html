@@ -3,304 +3,999 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Клуб волонтеров — набор временно закрыт | Соборная палата</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <title>Общество друзей Московского Епархиального Дома — Набор закрыт</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
   <style>
-    body {
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      color: #1d1d1d;
-      line-height: 1.6;
-      font-size: 16px;
+    *, *::before, *::after {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
-    .volunteer-body h1,
-    .volunteer-body h2,
-    .volunteer-body h3 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-weight: 400;
-      color: #596a63;
-      margin-top: 0;
-    }
-    .volunteer-body h1 { font-size: 42px; line-height: 1.2; }
-    .volunteer-body h2 { font-size: 32px; margin-bottom: 24px; }
-    .volunteer-body h3 { font-size: 24px; margin-bottom: 16px; }
-    .volunteer-body a { color: #596a63; text-decoration: none; }
-    .volunteer-body a:hover { color: #3d4d47; }
 
-    .volunteer-body .volunteer-hero {
+    :root {
+      --color-dark: #2B2520;
+      --color-gold: #C9A84C;
+      --color-gold-light: #D4BC6A;
+      --color-gold-dark: #A88B35;
+      --color-burgundy: #8B2D3B;
+      --color-burgundy-light: #A33D4D;
+      --color-cream: #FAF6ED;
+      --color-cream-dark: #F0E9DA;
+      --color-warm-gray: #6B6460;
+      --color-light-gray: #E8E2D8;
+      --color-white: #FFFFFF;
+      --font-heading: 'Playfair Display', Georgia, serif;
+      --font-body: 'Inter', sans-serif;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--color-dark);
+      background: var(--color-cream);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ===== HERO ===== */
+    .hero-closed {
       position: relative;
       min-height: 520px;
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
       overflow: hidden;
+      background: var(--color-dark);
     }
-    .volunteer-body .volunteer-hero__bg {
+
+    .hero-closed__bg {
       position: absolute;
       inset: 0;
-      background: url('https://www.lihov6.ru/sites/default/files/block/images/2022-12/header1.jpg') center/cover no-repeat;
-      filter: brightness(0.5);
-      z-index: 0;
+      background: url('https://z-cdn-media.chatglm.cn/files/182a3208-e080-4da9-9bb1-64a1a43e4f0e.jpg?auth_key=1879284152-682e736f37eb4068bec0f4e937ea2274-0-2d16ee092e337b37dd4dea29cd2e5901') center/cover no-repeat;
+      opacity: 0.3;
+      transition: opacity 0.6s ease;
     }
-    .volunteer-body .volunteer-hero__content {
+
+    .hero-closed__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(43, 37, 32, 0.75) 0%,
+        rgba(43, 37, 32, 0.5) 50%,
+        rgba(43, 37, 32, 0.85) 100%
+      );
+    }
+
+    .hero-closed__content {
       position: relative;
-      z-index: 1;
-      max-width: 800px;
-      padding: 48px 24px;
-      color: #fff;
+      z-index: 2;
+      text-align: center;
+      padding: 60px 24px;
+      max-width: 720px;
     }
-    .volunteer-body .volunteer-hero__logo {
-      width: 120px;
-      height: auto;
-      margin: 0 auto 24px;
-    }
-    .volunteer-body .volunteer-hero h1 {
-      color: #ffffff;
-      font-size: 38px;
-      margin-bottom: 20px;
-    }
-    .volunteer-body .volunteer-hero p {
-      font-size: 18px;
-      margin-bottom: 28px;
-      opacity: 0.95;
-    }
-    .volunteer-body .status-badge {
-      display: inline-block;
-      padding: 12px 28px;
-      border: 1px solid rgba(255,255,255,0.6);
-      border-radius: 5px;
-      font-size: 14px;
+
+    .hero-closed__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(139, 45, 59, 0.85);
+      color: var(--color-white);
+      padding: 8px 20px;
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 600;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: #fff;
-      background: rgba(255,255,255,0.08);
-      margin-bottom: 24px;
+      margin-bottom: 28px;
+      backdrop-filter: blur(8px);
     }
 
-    .volunteer-body .volunteer-section {
-      padding: 72px 24px;
-      max-width: 1100px;
+    .hero-closed__badge .iconify {
+      font-size: 16px;
+    }
+
+    .hero-closed__title {
+      font-family: var(--font-heading);
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 600;
+      line-height: 1.15;
+      color: var(--color-white);
+      margin-bottom: 20px;
+    }
+
+    .hero-closed__title span {
+      color: var(--color-gold-light);
+    }
+
+    .hero-closed__subtitle {
+      font-size: 17px;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.8);
+      font-weight: 300;
+      max-width: 560px;
       margin: 0 auto;
     }
-    .volunteer-body .volunteer-section--alt {
-      background: #f8f7f4;
+
+    .hero-closed__decor {
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 60px;
+      z-index: 3;
     }
 
-    .volunteer-body .lead {
-      font-size: 18px;
-      color: #4a4a4a;
-      max-width: 760px;
-      margin-bottom: 32px;
+    .hero-closed__decor svg {
+      display: block;
+      width: 100%;
+      height: 100%;
     }
 
-    .volunteer-body .features-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-      margin-top: 36px;
+    /* ===== MESSAGE SECTION ===== */
+    .message-section {
+      padding: 80px 24px 60px;
+      background: var(--color-cream);
     }
-    .volunteer-body .feature-card {
-      background: #fff;
-      border: 1px solid #e7e6e1;
-      border-radius: 6px;
-      padding: 28px;
+
+    .message-section__inner {
+      max-width: 800px;
+      margin: 0 auto;
       text-align: center;
-      transition: transform .3s ease, box-shadow .3s ease;
-    }
-    .volunteer-body .feature-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.06);
-    }
-    .volunteer-body .feature-icon {
-      width: 48px;
-      height: 48px;
-      margin: 0 auto 16px;
-      color: #596a63;
-    }
-    .volunteer-body .feature-card h4 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 18px;
-      color: #2C2A2A;
-      margin-bottom: 8px;
-    }
-    .volunteer-body .feature-card p {
-      font-size: 14px;
-      color: #595959;
-      margin: 0;
-      line-height: 1.5;
     }
 
-    .volunteer-body .contact-block {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin-top: 24px;
-    }
-    .volunteer-body .contact-item {
+    .message-section__icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--color-gold), var(--color-gold-dark));
       display: flex;
       align-items: center;
-      gap: 12px;
-      padding: 18px;
-      border: 1px solid #e7e6e1;
-      border-radius: 6px;
-      background: #fff;
-      text-decoration: none;
-      color: #1d1d1d;
-      transition: border-color .3s ease, background .3s ease;
-    }
-    .volunteer-body .contact-item:hover {
-      border-color: #596a63;
-      background: #fdfdfc;
-    }
-    .volunteer-body .contact-item svg {
-      flex-shrink: 0;
-      width: 22px;
-      height: 22px;
-      color: #596a63;
-    }
-    .volunteer-body .contact-item span {
-      font-size: 15px;
+      justify-content: center;
+      margin: 0 auto 28px;
+      box-shadow: 0 8px 32px rgba(201, 168, 76, 0.25);
     }
 
-    .volunteer-body .btn {
-      display: inline-block;
-      padding: 14px 32px;
-      border-radius: 5px;
-      font-size: 15px;
+    .message-section__icon .iconify {
+      font-size: 32px;
+      color: var(--color-white);
+    }
+
+    .message-section__heading {
+      font-family: var(--font-heading);
+      font-size: clamp(24px, 3.5vw, 34px);
+      font-weight: 600;
+      color: var(--color-dark);
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+
+    .message-section__text {
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--color-warm-gray);
+      font-weight: 400;
+    }
+
+    .message-section__text strong {
+      color: var(--color-dark);
+      font-weight: 500;
+    }
+
+    /* ===== ABOUT CARDS ===== */
+    .about-section {
+      padding: 60px 24px 80px;
+      background: var(--color-white);
+    }
+
+    .about-section__header {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 48px;
+    }
+
+    .about-section__label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
-      letter-spacing: 0.04em;
-      text-decoration: none;
-      transition: all .3s ease;
+      color: var(--color-gold-dark);
+      margin-bottom: 12px;
+    }
+
+    .about-section__title {
+      font-family: var(--font-heading);
+      font-size: clamp(22px, 3vw, 30px);
+      font-weight: 600;
+      color: var(--color-dark);
+      line-height: 1.3;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .about-card {
+      background: var(--color-cream);
+      border-radius: 16px;
+      padding: 32px 28px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid transparent;
+    }
+
+    .about-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(43, 37, 32, 0.08);
+      border-color: var(--color-light-gray);
+    }
+
+    .about-card__icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      background: var(--color-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    }
+
+    .about-card__icon .iconify {
+      font-size: 26px;
+      color: var(--color-gold-dark);
+    }
+
+    .about-card__title {
+      font-family: var(--font-heading);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--color-dark);
+      margin-bottom: 10px;
+    }
+
+    .about-card__desc {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--color-warm-gray);
+    }
+
+    /* ===== STEPS ===== */
+    .steps-section {
+      padding: 80px 24px;
+      background: var(--color-cream);
+    }
+
+    .steps-section__header {
+      text-align: center;
+      max-width: 560px;
+      margin: 0 auto 48px;
+    }
+
+    .steps-section__label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-burgundy);
+      margin-bottom: 12px;
+    }
+
+    .steps-section__title {
+      font-family: var(--font-heading);
+      font-size: clamp(22px, 3vw, 30px);
+      font-weight: 600;
+      color: var(--color-dark);
+      line-height: 1.3;
+    }
+
+    .steps-list {
+      max-width: 640px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .step-item {
+      display: flex;
+      gap: 20px;
+      position: relative;
+    }
+
+    .step-item:not(:last-child) {
+      padding-bottom: 32px;
+    }
+
+    .step-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 19px;
+      top: 44px;
+      bottom: 0;
+      width: 2px;
+      background: var(--color-light-gray);
+    }
+
+    .step-item__number {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--color-white);
+      border: 2px solid var(--color-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--color-gold-dark);
+      position: relative;
+      z-index: 1;
+    }
+
+    .step-item__content {
+      padding-top: 6px;
+    }
+
+    .step-item__title {
+      font-weight: 600;
+      font-size: 16px;
+      color: var(--color-dark);
+      margin-bottom: 4px;
+    }
+
+    .step-item__desc {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--color-warm-gray);
+    }
+
+    /* ===== NOTIFY FORM ===== */
+    .notify-section {
+      padding: 80px 24px;
+      background: var(--color-dark);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .notify-section__bg-pattern {
+      position: absolute;
+      inset: 0;
+      opacity: 0.04;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C9A84C'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .notify-section__inner {
+      position: relative;
+      z-index: 1;
+      max-width: 580px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .notify-section__icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: rgba(201, 168, 76, 0.15);
+      border: 1px solid rgba(201, 168, 76, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+    }
+
+    .notify-section__icon .iconify {
+      font-size: 28px;
+      color: var(--color-gold-light);
+    }
+
+    .notify-section__title {
+      font-family: var(--font-heading);
+      font-size: clamp(22px, 3.5vw, 32px);
+      font-weight: 600;
+      color: var(--color-white);
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .notify-section__desc {
+      font-size: 15px;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 36px;
+    }
+
+    .notify-form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .notify-form__row {
+      display: flex;
+      gap: 14px;
+    }
+
+    .notify-form__input {
+      flex: 1;
+      padding: 14px 18px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--color-white);
+      font-family: var(--font-body);
+      font-size: 15px;
+      outline: none;
+      transition: border-color 0.25s ease, background 0.25s ease;
+    }
+
+    .notify-form__input::placeholder {
+      color: rgba(255, 255, 255, 0.35);
+    }
+
+    .notify-form__input:focus {
+      border-color: var(--color-gold);
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .notify-form__button {
+      padding: 14px 32px;
+      border-radius: 10px;
+      border: none;
+      background: linear-gradient(135deg, var(--color-gold), var(--color-gold-dark));
+      color: var(--color-white);
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 600;
       cursor: pointer;
-      border: 1px solid #596a63;
-      background: #fff;
-      color: #596a63;
-      white-space: nowrap;
-    }
-    .volunteer-body .btn:hover {
-      background: #596a63;
-      color: #fff;
-    }
-    .volunteer-body .btn--solid {
-      background: #596a63;
-      color: #fff;
-      border-color: #596a63;
-    }
-    .volunteer-body .btn--solid:hover {
-      background: #fff;
-      color: #596a63;
-    }
-    .volunteer-body .btn--light {
-      background: transparent;
-      color: #fff;
-      border-color: rgba(255,255,255,0.7);
-    }
-    .volunteer-body .btn--light:hover {
-      background: rgba(255,255,255,0.12);
-      color: #fff;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+      box-shadow: 0 4px 20px rgba(201, 168, 76, 0.3);
     }
 
-    .volunteer-body .decorative-line {
-      width: 60px;
-      height: 1px;
-      background: #596a63;
-      margin: 18px 0;
-    }
-    .volunteer-body .decorative-line--center {
-      margin-left: auto;
-      margin-right: auto;
+    .notify-form__button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 28px rgba(201, 168, 76, 0.4);
     }
 
-    @media (max-width: 960px) {
-      .volunteer-body .features-grid,
-      .volunteer-body .contact-block {
+    .notify-form__button:active {
+      transform: translateY(0);
+    }
+
+    .notify-form__consent {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.35);
+      line-height: 1.6;
+      margin-top: 4px;
+    }
+
+    .notify-form__consent a {
+      color: rgba(201, 168, 76, 0.7);
+      text-decoration: underline;
+      text-decoration-color: rgba(201, 168, 76, 0.3);
+    }
+
+    .notify-form__consent a:hover {
+      color: var(--color-gold-light);
+    }
+
+    .notify-success {
+      display: none;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .notify-success.is-visible {
+      display: block;
+      animation: fadeInUp 0.5s ease forwards;
+    }
+
+    .notify-success__icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: rgba(201, 168, 76, 0.15);
+      border: 1px solid rgba(201, 168, 76, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+    }
+
+    .notify-success__icon .iconify {
+      font-size: 28px;
+      color: var(--color-gold-light);
+    }
+
+    .notify-success__text {
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--color-white);
+      margin-bottom: 6px;
+    }
+
+    .notify-success__sub {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* ===== FAQ ===== */
+    .faq-section {
+      padding: 80px 24px;
+      background: var(--color-white);
+    }
+
+    .faq-section__header {
+      text-align: center;
+      max-width: 520px;
+      margin: 0 auto 44px;
+    }
+
+    .faq-section__title {
+      font-family: var(--font-heading);
+      font-size: clamp(22px, 3vw, 30px);
+      font-weight: 600;
+      color: var(--color-dark);
+      line-height: 1.3;
+    }
+
+    .faq-list {
+      max-width: 680px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--color-light-gray);
+    }
+
+    .faq-item:first-child {
+      border-top: 1px solid var(--color-light-gray);
+    }
+
+    .faq-item__question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 20px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      cursor: pointer;
+      text-align: left;
+      font-family: var(--font-body);
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--color-dark);
+      transition: color 0.2s ease;
+    }
+
+    .faq-item__question:hover {
+      color: var(--color-gold-dark);
+    }
+
+    .faq-item__arrow {
+      flex-shrink: 0;
+      font-size: 20px;
+      color: var(--color-gold-dark);
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item.is-open .faq-item__arrow {
+      transform: rotate(180deg);
+    }
+
+    .faq-item__answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+    }
+
+    .faq-item.is-open .faq-item__answer {
+      max-height: 300px;
+      padding-bottom: 20px;
+    }
+
+    .faq-item__answer p {
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--color-warm-gray);
+    }
+
+    /* ===== CONTACT BAR ===== */
+    .contact-bar {
+      padding: 48px 24px;
+      background: var(--color-cream-dark);
+    }
+
+    .contact-bar__inner {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+
+    .contact-bar__text {
+      font-size: 15px;
+      color: var(--color-warm-gray);
+    }
+
+    .contact-bar__text strong {
+      color: var(--color-dark);
+    }
+
+    .contact-bar__links {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .contact-bar__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .contact-bar__link--primary {
+      background: var(--color-burgundy);
+      color: var(--color-white);
+    }
+
+    .contact-bar__link--primary:hover {
+      background: var(--color-burgundy-light);
+    }
+
+    .contact-bar__link--secondary {
+      background: var(--color-white);
+      color: var(--color-dark);
+      border: 1px solid var(--color-light-gray);
+    }
+
+    .contact-bar__link--secondary:hover {
+      border-color: var(--color-gold);
+      color: var(--color-gold-dark);
+    }
+
+    .contact-bar__link .iconify {
+      font-size: 18px;
+    }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .animate-in.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 640px) {
+      .hero-closed {
+        min-height: 420px;
+      }
+
+      .notify-form__row {
+        flex-direction: column;
+      }
+
+      .contact-bar__inner {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .about-grid {
         grid-template-columns: 1fr;
       }
-      .volunteer-body h1 { font-size: 30px; }
-      .volunteer-body h2 { font-size: 26px; }
-      .volunteer-body .volunteer-hero { min-height: 420px; }
     }
   </style>
 </head>
 <body>
 
-<!-- НАЧАЛО ТЕЛА СТРАНИЦЫ. ВСТАВИТЬ В CMS МЕЖДУ ШАПКОЙ И ПОДВАЛОМ -->
-<div class="volunteer-body">
-
-  <section class="volunteer-hero">
-    <div class="volunteer-hero__bg"></div>
-    <div class="volunteer-hero__content">
-      <img src="https://www.lihov6.ru/sites/default/files/block/images/2022-12/logo.png" alt="Общество друзей Московского Епархиального дома" class="volunteer-hero__logo">
-      <div class="status-badge">Набор временно приостановлен</div>
-      <h1>Клуб волонтеров «Общество друзей Московского Епархиального дома»</h1>
-      <p>В настоящее время набор участников закрыт. Следите за новостями — мы объявим о начале нового сезона в наших каналах.</p>
+  <!-- ===== HERO ===== -->
+  <section class="hero-closed">
+    <div class="hero-closed__bg"></div>
+    <div class="hero-closed__overlay"></div>
+    <div class="hero-closed__content">
+      <div class="hero-closed__badge">
+        <span class="iconify" data-icon="lucide:clock"></span>
+        Набор временно приостановлен
+      </div>
+      <h1 class="hero-closed__title">
+        Общество друзей<br><span>Московского Епархиального Дома</span>
+      </h1>
+      <p class="hero-closed__subtitle">
+        Благодарим за интерес к волонтёрскому клубу. В данный момент набор закрыт, но мы обязательно откроем его снова. Оставьте контакты, чтобы узнать первыми.
+      </p>
+    </div>
+    <div class="hero-closed__decor">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none" fill="none">
+        <path d="M0 60L1440 60L1440 0C1200 50 960 20 720 40C480 60 240 10 0 30L0 60Z" fill="var(--color-cream)"/>
+      </svg>
     </div>
   </section>
 
-  <section class="volunteer-section">
-    <h2>О клубе</h2>
-    <div class="decorative-line"></div>
-    <p class="lead">
-      Клуб волонтеров истории объединяет людей, интересующихся историей Русской Церкви, москвоведением и музейным делом. Участники проходят обучение, готовят авторские экскурсии и ведут посетителей по выставкам Московского Епархиального дома.
-    </p>
+  <!-- ===== MESSAGE ===== -->
+  <section class="message-section animate-in">
+    <div class="message-section__inner">
+      <div class="message-section__icon">
+        <span class="iconify" data-icon="lucide:heart-handshake"></span>
+      </div>
+      <h2 class="message-section__heading">Набор волонтёров временно закрыт</h2>
+      <p class="message-section__text">
+        Мы глубоко ценим ваше желание стать частью Общества друзей Московского Епархиального Дома. Сейчас мы не принимаем новые заявки, но <strong>следующий набор обязательно состоится</strong>. Чтобы не пропустить начало, подпишитесь на уведомление — мы напишем, как только откроем двери для новых друзей.
+      </p>
+    </div>
+  </section>
 
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+  <!-- ===== ABOUT CARDS ===== -->
+  <section class="about-section">
+    <div class="about-section__header animate-in">
+      <p class="about-section__label">О нашем клубе</p>
+      <h2 class="about-section__title">Чем занимаются друзья Епархиального Дома</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-card animate-in">
+        <div class="about-card__icon">
+          <span class="iconify" data-icon="lucide:book-open"></span>
         </div>
-        <h4>Обучение</h4>
-        <p>Бесплатные лекции и семинары от ведущих историков и экскурсоводов.</p>
+        <h3 class="about-card__title">Экскурсии и рассказы</h3>
+        <p class="about-card__desc">Проводим экскурсии по Московскому Епархиальному Дому, знакомим посетителей с историей здания и его значением для культуры</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      <div class="about-card animate-in">
+        <div class="about-card__icon">
+          <span class="iconify" data-icon="lucide:calendar-heart"></span>
         </div>
-        <h4>История</h4>
-        <p>Погружение в события XX века, жизнь Патриарха Тихона и новомучеников.</p>
+        <h3 class="about-card__title">Мероприятия</h3>
+        <p class="about-card__desc">Помогаем организовывать и проводить культурные, образовательные и духовные мероприятия на площадке Епархиального Дома</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <div class="about-card animate-in">
+        <div class="about-card__icon">
+          <span class="iconify" data-icon="lucide:users"></span>
         </div>
-        <h4>Сообщество</h4>
-        <p>Единомышленники, выездные экскурсии и совместные проекты.</p>
+        <h3 class="about-card__title">Сообщество</h3>
+        <p class="about-card__desc">Станьте частью тёплого круга единомышленников, объединённых любовью к истории, культуре и служению</p>
       </div>
     </div>
   </section>
 
-  <section class="volunteer-section volunteer-section--alt">
-    <h2 style="text-align:center;">Как узнать о начале набора</h2>
-    <div class="decorative-line decorative-line--center"></div>
-    <p style="text-align:center; max-width: 640px; margin: 0 auto 28px; color: #4a4a4a;">
-      Подпишитесь на рассылку и каналы Соборной палаты, чтобы первыми получить анонс открытия набора и подробности о новой программе.
-    </p>
-
-    <div class="contact-block">
-      <a class="contact-item" href="https://t.me/lihov6" target="_blank">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-16.13 6.42a1.82 1.82 0 0 0-.48.323 1.38 1.38 0 0 0-.33.537c-.09.282-.105.6-.03.91.076.31.24.59.47.8.23.21.52.35.84.4l4.65.85 2.15 5.85c.1.27.28.5.52.66.24.16.53.24.82.22.29-.02.57-.14.79-.34.22-.2.38-.47.45-.77l1.85-7.2 4.35-1.45c.31-.1.58-.31.76-.58.18-.27.26-.59.22-.91-.04-.32-.19-.62-.42-.85-.23-.23-.53-.38-.86-.42z"/></svg>
-        <span>Telegram Соборной палаты</span>
-      </a>
-      <a class="contact-item" href="/cdn-cgi/l/email-protection#d0b9beb6bf90bcb9b8bfa6e6fea2a5">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><polyline points="4 4 12 13 20 4"/></svg>
-        <span><span class="__cf_email__" data-cfemail="f29b9c949db29e9b9a9d84c4dc8087">[email&#160;protected]</span></span>
-      </a>
-      <a class="contact-item" href="tel:+74951145074">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        <span>+7 (495) 114-50-74</span>
-      </a>
+  <!-- ===== STEPS ===== -->
+  <section class="steps-section">
+    <div class="steps-section__header animate-in">
+      <p class="steps-section__label">Как будет проходить набор</p>
+      <h2 class="steps-section__title">Путь от заявки до участия</h2>
+    </div>
+    <div class="steps-list">
+      <div class="step-item animate-in">
+        <div class="step-item__number">1</div>
+        <div class="step-item__content">
+          <div class="step-item__title">Оставьте контакты</div>
+          <p class="step-item__desc">Заполните форму ниже — мы сохраним ваши данные и свяжемся, когда набор откроется</p>
+        </div>
+      </div>
+      <div class="step-item animate-in">
+        <div class="step-item__number">2</div>
+        <div class="step-item__content">
+          <div class="step-item__title">Получите приглашение</div>
+          <p class="step-item__desc">Как только стартует новый набор, мы отправим вам письмо или сообщение с подробностями</p>
+        </div>
+      </div>
+      <div class="step-item animate-in">
+        <div class="step-item__number">3</div>
+        <div class="step-item__content">
+          <div class="step-item__title">Заполните анкету</div>
+          <p class="step-item__desc">Расскажите о себе, своих интересах и мотивации — это поможет нам лучше познакомиться</p>
+        </div>
+      </div>
+      <div class="step-item animate-in">
+        <div class="step-item__number">4</div>
+        <div class="step-item__content">
+          <div class="step-item__title">Добро пожаловать!</div>
+          <p class="step-item__desc">Пройдите вводную встречу и начните участвовать в жизни Общества друзей</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="volunteer-section" style="text-align:center; padding-bottom: 96px;">
-    <img src="https://www.lihov6.ru/sites/default/files/block/images/2022-12/logo_0.png" alt="" style="width: 80px; opacity: 0.35; margin-bottom: 18px;">
-    <p style="color:#777; font-size: 14px; margin: 0;">Соборная палата · Москва, Лихов переулок, дом 6</p>
+  <!-- ===== NOTIFY FORM ===== -->
+  <section class="notify-section">
+    <div class="notify-section__bg-pattern"></div>
+    <div class="notify-section__inner">
+      <div class="notify-section__icon">
+        <span class="iconify" data-icon="lucide:bell-ring"></span>
+      </div>
+      <h2 class="notify-section__title">Узнайте о наборе первым</h2>
+      <p class="notify-section__desc">Оставьте имя и почту — мы напишем, как только откроем новый набор волонтёров</p>
+
+      <form class="notify-form" id="notifyForm" onsubmit="return handleNotifySubmit(event)">
+        <div class="notify-form__row">
+          <input
+            type="text"
+            class="notify-form__input"
+            placeholder="Ваше имя"
+            required
+            id="notifyName"
+          >
+          <input
+            type="email"
+            class="notify-form__input"
+            placeholder="Электронная почта"
+            required
+            id="notifyEmail"
+          >
+        </div>
+        <button type="submit" class="notify-form__button" id="notifyBtn">
+          Подписаться на уведомление
+        </button>
+        <p class="notify-form__consent">
+          Нажимая кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a>. Мы не рассылаем спам.
+        </p>
+      </form>
+
+      <div class="notify-success" id="notifySuccess">
+        <div class="notify-success__icon">
+          <span class="iconify" data-icon="lucide:check"></span>
+        </div>
+        <p class="notify-success__text">Вы в списке!</p>
+        <p class="notify-success__sub">Мы обязательно сообщим, когда набор откроется</p>
+      </div>
+    </div>
   </section>
 
-</div>
-<!-- КОНЕЦ ТЕЛА СТРАНИЦЫ -->
+  <!-- ===== FAQ ===== -->
+  <section class="faq-section">
+    <div class="faq-section__header animate-in">
+      <h2 class="faq-section__title">Частые вопросы</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item animate-in">
+        <button class="faq-item__question" onclick="toggleFaq(this)">
+          <span>Когда откроется следующий набор?</span>
+          <span class="iconify faq-item__arrow" data-icon="lucide:chevron-down"></span>
+        </button>
+        <div class="faq-item__answer">
+          <p>Точные даты мы объявляем на сайте и в социальных сетях. Как правило, набор проходит 2–3 раза в год. Подпишитесь на уведомление, чтобы не пропустить.</p>
+        </div>
+      </div>
+      <div class="faq-item animate-in">
+        <button class="faq-item__question" onclick="toggleFaq(this)">
+          <span>Кто может стать волонтёром?</span>
+          <span class="iconify faq-item__arrow" data-icon="lucide:chevron-down"></span>
+        </button>
+        <div class="faq-item__answer">
+          <p>Любой совершеннолетний человек, разделяющий ценности Общества и готовый уделять время добровольческой деятельности. Специальных навыков не требуется — всему научим.</p>
+        </div>
+      </div>
+      <div class="faq-item animate-in">
+        <button class="faq-item__question" onclick="toggleFaq(this)">
+          <span>Сколько времени нужно уделять?</span>
+          <span class="iconify faq-item__arrow" data-icon="lucide:chevron-down"></span>
+        </button>
+        <div class="faq-item__answer">
+          <p>Мы просим минимум 4–6 часов в месяц. Расписание гибкое и обсуждается индивидуально. Главное — желание и регулярность.</p>
+        </div>
+      </div>
+      <div class="faq-item animate-in">
+        <button class="faq-item__question" onclick="toggleFaq(this)">
+          <span>Могу ли я подписаться, если уже подавал заявку раньше?</span>
+          <span class="iconify faq-item__arrow" data-icon="lucide:chevron-down"></span>
+        </button>
+        <div class="faq-item__answer">
+          <p>Да, конечно. Если вы ранее участвовали или подавали заявку, вы можете снова оставить контакты — мы учтём вашу историю и свяжемся в первую очередь.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9febb3f6bfdbf12d',t:'MTc3OTI4Mzg5OQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+  <!-- ===== CONTACT BAR ===== -->
+  <section class="contact-bar">
+    <div class="contact-bar__inner">
+      <p class="contact-bar__text">
+        Есть вопросы? Напишите нам:<br>
+        <strong>volunteer@lihov6.ru</strong>
+      </p>
+      <div class="contact-bar__links">
+        <a href="mailto:volunteer@lihov6.ru" class="contact-bar__link contact-bar__link--primary">
+          <span class="iconify" data-icon="lucide:mail"></span>
+          Написать
+        </a>
+        <a href="https://t.me/lihov6" class="contact-bar__link contact-bar__link--secondary" target="_blank">
+          <span class="iconify" data-icon="lucide:send"></span>
+          Telegram
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // ===== Scroll animations =====
+    function initScrollAnimations() {
+      const elements = document.querySelectorAll('.animate-in');
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+              setTimeout(() => {
+                entry.target.classList.add('is-visible');
+              }, index * 80);
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
+      );
+      elements.forEach((el) => observer.observe(el));
+    }
+
+    // ===== FAQ toggle =====
+    function toggleFaq(button) {
+      const item = button.closest('.faq-item');
+      const wasOpen = item.classList.contains('is-open');
+      document.querySelectorAll('.faq-item.is-open').forEach((el) => {
+        el.classList.remove('is-open');
+      });
+      if (!wasOpen) {
+        item.classList.add('is-open');
+      }
+    }
+
+    // ===== Form submit =====
+    function handleNotifySubmit(e) {
+      e.preventDefault();
+      const form = document.getElementById('notifyForm');
+      const btn = document.getElementById('notifyBtn');
+      const success = document.getElementById('notifySuccess');
+
+      btn.textContent = 'Отправка...';
+      btn.disabled = true;
+      btn.style.opacity = '0.7';
+
+      setTimeout(() => {
+        form.style.display = 'none';
+        success.classList.add('is-visible');
+      }, 1200);
+
+      return false;
+    }
+
+    // ===== Init =====
+    document.addEventListener('DOMContentLoaded', () => {
+      initScrollAnimations();
+    });
+  </script>
+
+</body>
 </html>
